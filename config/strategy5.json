@@ -1,0 +1,8 @@
+{
+  "mainnet": {
+    "PendleStrategy": {
+      "address": "0x9a50969E2715e478C9fC5d124FeB138b9548d490",
+      "startBlock": 18995298
+    }
+  }
+}

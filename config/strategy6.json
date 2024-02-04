@@ -1,0 +1,8 @@
+{
+  "arbitrum-one": {
+    "PendleStrategy": {
+      "address": "0x9E6B441B0f88BAC1DC561783eb5773Ac593222aF",
+      "startBlock": 173645478
+    }
+  }
+}

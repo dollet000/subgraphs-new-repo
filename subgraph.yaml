@@ -1,0 +1,32 @@
+specVersion: 1.0.0
+description: Dollet Strategy Subgraph
+indexerHints:
+  prune: auto
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: PendleStrategy
+    network: mainnet
+    source:
+      abi: PendleStrategy
+      address: "0xE01f0dfF76034DDF0954CA069f2D4cd7A65C63Cd"
+      startBlock: 19093440
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - Deposit
+        - Withdraw
+      abis:
+        - name: PendleStrategy
+          file: ./abis/PendleStrategy.json
+      eventHandlers:
+        - event: Deposit(address,uint256,address,uint256)
+          handler: handleDeposit
+          receipt: true
+        - event: Withdraw(address,uint256,address,uint256)
+          handler: handleWithdraw
+          receipt: true
+      file: ./src/pendle-strategy.ts
